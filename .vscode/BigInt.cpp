@@ -17,7 +17,7 @@ public:
     BigInt(BigInt &);
  
     //Helper Functions:
-    friend void divide_by_2(BigInt &a);
+    friend void div_by_2(BigInt &a);
     friend bool Null(const BigInt &);
     friend int Length(const BigInt &);
     int operator[](const int)const;
@@ -355,7 +355,7 @@ BigInt operator^(BigInt & a,BigInt & b){
     return temp;
 }
  
-void divide_by_2(BigInt & a){
+void div_by_2(BigInt & a){
     int add = 0;
     for (int i = a.digits.size() - 1; i >= 0;i--){
         int digit = (a.digits[i] >> 1) + add;
@@ -368,11 +368,11 @@ void divide_by_2(BigInt & a){
  
 BigInt sqrt(BigInt & a){
     BigInt left(1), right(a), v(1), mid, prod;
-    divide_by_2(right);
+    div_by_2(right);
     while(left <= right){
         mid += left;
         mid += right;
-        divide_by_2(mid);
+        div_by_2(mid);
         prod = (mid * mid);
         if(prod <= a){
             v = mid;
@@ -439,9 +439,9 @@ ostream &operator<<(ostream &out,const BigInt &a){
     return cout;
 }
  
-//Driver code with some examples
+
 int main()
-{
+{ //sample run
     BigInt first("12345");
     cout << "The number of digits"
          << " in first big integer = "
@@ -462,14 +462,14 @@ int main()
         cout << "fifth is larger than fourth!\n";
     }
  
-    // Printing all the numbers
+    
     cout << "first = " << first << '\n';
     cout << "second = " << second << '\n';
     cout << "third = " << third << '\n';
     cout << "fourth = " << fourth<< '\n';
     cout << "fifth = " << fifth<< '\n';
  
-    // Incrementing the value of first
+    
     first++;
     cout << "After incrementing the"
          << " value of first is : ";
@@ -483,7 +483,7 @@ int main()
     cout << "Product of second and third = "
          << product << '\n';
  
-    //fibonacci number from 1 to 100
+    
     cout << "                           Fibonacci"
          << "                              \n";
     for (int i = 0; i <= 100; i++) {
@@ -499,7 +499,7 @@ int main()
         cout << "Catalan " << i << " = " << Cat<<'\n';
     }
  
-    // Calculating factorial of from 1 to 100
+    
     cout << "                   Factorial"
          << "                            \n";
     for (int i = 0; i <= 100; i++) {
