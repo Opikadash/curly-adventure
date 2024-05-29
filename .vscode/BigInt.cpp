@@ -442,22 +442,22 @@ ostream &operator<<(ostream &out,const BigInt &a){
 
 int main()
 { //sample run
-    BigInt first("12345");
+    BigInt first("98765");
     cout << "The number of digits"
          << " in first big integer = "
          << Length(first) << '\n';
-    BigInt second(12345);
+    BigInt second(98765);
     if (first == second) {
         cout << "first and second are equal!\n";
     }
     else
         cout << "Not equal!\n";
-    BigInt third("10000");
-    BigInt fourth("100000");
+    BigInt third("50890");
+    BigInt fourth("50890");
     if (third < fourth) {
         cout << "third is smaller than fourth!\n";
     }
-    BigInt fifth("10000000");
+    BigInt fifth("98650000");
     if (fifth > fourth) {
         cout << "fifth is larger than fourth!\n";
     }
